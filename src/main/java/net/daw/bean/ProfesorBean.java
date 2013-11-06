@@ -24,6 +24,7 @@ public class ProfesorBean {
     private String sexo = "";
     private String telefono = "";
     private String email = "";
+    private String dni = "";
 
     public ProfesorBean() {
     }
@@ -142,5 +143,19 @@ public class ProfesorBean {
      */
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    /**
+     * @return the dni
+     */
+    public String getDni() {
+        return dni;
+    }
+
+    /**
+     * @param dni the dni to set
+     */
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 }
