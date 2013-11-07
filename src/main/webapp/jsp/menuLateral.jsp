@@ -27,22 +27,14 @@
         }
         menu += "<a href=\"Controller?class=usuario&method=logout\">Logout</a></li>";
     }
-     menu += "<li class=\"nav-header\">Profesor</li>";
-    if (oContexto.getClase().equals("profesor") && oContexto.getMetodo().equals("ocioso")) {
+    menu += "<li class=\"nav-header\">Profesor</li>";
+    if (oContexto.getClase().equals("profesor") && oContexto.getMetodo().equals("list")) {
         menu += "<li class=\"active\">";
     } else {
         menu += "<li>";
     }
-    menu += "<a href=\"Controller\">Listar</a></li>";
+    menu += "<a href=\"Controller?class=alumno&method=list\">Listar</a></li>";
 
-    if (!oContexto.getHaySesion()) {
-        if (oContexto.getClase().equals("profesor") && oContexto.getMetodo().equals("list")) {
-            menu += "<li class=\"active\">";
-        } else {
-            menu += "<li>";
-        }
-        menu += "<a href=\"Controller?class=usuario&method=list\">Listar</a></li>";
-    } 
     menu += "</ul></div>";
 %>
 <%=menu%>
