@@ -33,7 +33,7 @@
     } else {
         menu += "<li>";
     }
-    menu += "<a href=\"Controller?class=alumno&method=list\">Listar</a></li>";
+    menu += "<a href=\"Controller?class=profesor&method=list\">Listar</a></li>";
 
     menu += "</ul></div>";
 %>
