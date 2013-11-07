@@ -45,12 +45,12 @@
         strValueBoton = "Crear";
     }
 %>
-<h1><%=strTitulo%> de Alumno</h1>
-<form class="form-horizontal" action="Controller" method="post" id="alumnoForm">
+<h1><%=strTitulo%> de Profesor</h1>
+<form class="form-horizontal" action="Controller" method="post" id="profesorForm ">
     <fieldset>
-        <legend>Formulario de Alumno</legend>
+        <legend>Formulario de Profesor</legend>
         <input type="hidden" name="id" value="<%=id%>" /> 
-        <input type="hidden" name="class" value="cliente" /> 
+        <input type="hidden" name="class" value="profesor" /> 
         <input type="hidden" name="method" value="<%=oContexto.getMetodo()%>" /> 
         <input type="hidden" name="phase" value="2" />
         <div class="control-group">
