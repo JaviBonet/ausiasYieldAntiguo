@@ -49,8 +49,8 @@
     </div>
     <div class="span3">
         <div class="text-right">
-            <legend>Filtro de Alumno</legend> 
-            <form class="navbar-form pull-right" action="Controller" method="post" id="alumnoForm">
+            <legend>Filtro de Profesor</legend> 
+            <form class="navbar-form pull-right" action="Controller" method="post" id="profesorForm">
                 <fieldset>                                               
                     <%=oContexto.getSerializedParamsExceptFilterFormFormat()%>       
                     <span>
@@ -100,13 +100,13 @@
             <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=ape2&ordervalue=asc"><i class="icon-arrow-up"></i></a>
             <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=ape2&ordervalue=desc"><i class="icon-arrow-down"></i></a>        
         </th>
-        <th>e-mail
-            <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=email&ordervalue=asc"><i class="icon-arrow-up"></i></a>
-            <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=email&ordervalue=desc"><i class="icon-arrow-down"></i></a>         
-        </th>
         <th>Sexo
             <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=sexo&ordervalue=asc"><i class="icon-arrow-up"></i></a>
             <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=sexo&ordervalue=desc"><i class="icon-arrow-down"></i></a>
+        </th>
+        <th>e-mail
+            <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=email&ordervalue=asc"><i class="icon-arrow-up"></i></a>
+            <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=email&ordervalue=desc"><i class="icon-arrow-down"></i></a>         
         </th>
         <th>Teléfono
             <a href="Controller?<%=oContexto.getSerializedParamsExceptOrder()%>&order=telefono&ordervalue=asc"><i class="icon-arrow-up"></i></a>
@@ -120,13 +120,13 @@
     <tr>
         <td><%=oProfesorBean.getId()%></td>
         <td><%=oProfesorBean.getId_usuario()%></td>
+        <td><%=oProfesorBean.getDni()%></td>
         <td><%=oProfesorBean.getNombre()%></td>
         <td><%=oProfesorBean.getApe1()%></td>
         <td><%=oProfesorBean.getApe2()%></td>
         <td><%=oProfesorBean.getSexo()%></td>
-        <td><%=oProfesorBean.getTelefono()%></td>
-        <td><%=oProfesorBean.getDni()%></td>
         <td><%=oProfesorBean.getEmail()%></td>
+        <td><%=oProfesorBean.getTelefono()%></td>
         <td>
             <div class="btn-toolbar">
                 <div class="btn-group">                    
