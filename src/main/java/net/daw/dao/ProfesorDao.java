@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package net.daw.dao;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -16,15 +16,17 @@ import net.daw.data.Mysql;
  * @author Pedro Benito
  */
 public class ProfesorDao {
+
     private final Mysql oMysql;
     private final net.daw.helper.Enum.Connection enumTipoConexion;
-    
-     public ProfesorDao(net.daw.helper.Enum.Connection tipoConexion) throws Exception {
+
+    public ProfesorDao(net.daw.helper.Enum.Connection tipoConexion) throws Exception {
         oMysql = new Mysql();
         enumTipoConexion = tipoConexion;
     }
-   
-    public int getPages(int intRegsPerPag,HashMap<String, String> hmFilter, HashMap<String, String> hmOrder) throws Exception {
+
+  
+    public int getPages(int intRegsPerPag, HashMap<String, String> hmFilter, HashMap<String, String> hmOrder) throws Exception {
         int pages;
         try {
             oMysql.conexion(enumTipoConexion);
@@ -36,32 +38,34 @@ public class ProfesorDao {
         }
     }
 
-    public ArrayList<ProfesorBean> getPage(int intRegsPerPag, int intPage,HashMap<String, String> hmFilter, HashMap<String, String> hmOrder) throws Exception {
+   
+    public ArrayList<ProfesorBean> getPage(int intRegsPerPag, int intPage, HashMap<String, String> hmFilter, HashMap<String, String> hmOrder) throws Exception {
         ArrayList<Integer> arrId;
-        ArrayList<ProfesorBean> arrCliente = new ArrayList<>();
+        ArrayList<ProfesorBean> arrProfesor = new ArrayList<>();
         try {
-            oMysql.conexion(enumTipoConexion);           
+            oMysql.conexion(enumTipoConexion);
             arrId = oMysql.getPage("profesor", intRegsPerPag, intPage, hmFilter, hmOrder);
             Iterator<Integer> iterador = arrId.listIterator();
             while (iterador.hasNext()) {
                 ProfesorBean oProfesorBean = new ProfesorBean(iterador.next());
-                arrCliente.add(this.get(oProfesorBean));
+                arrProfesor.add(this.get(oProfesorBean));
             }
             oMysql.desconexion();
-            return arrCliente;
+            return arrProfesor;
         } catch (Exception e) {
             throw new Exception("ProfesorDao.getPage: Error: " + e.getMessage());
         }
     }
-
+    
+   
     public ArrayList<String> getNeighborhood(String strLink, int intPageNumber, int intTotalPages, int intNeighborhood) throws Exception {
         oMysql.conexion(enumTipoConexion);
         ArrayList<String> n = oMysql.getNeighborhood(strLink, intPageNumber, intTotalPages, intNeighborhood);
         oMysql.desconexion();
         return n;
     }
-    
-     public ProfesorBean get(ProfesorBean oProfesorBean) throws Exception {
+
+    public ProfesorBean get(ProfesorBean oProfesorBean) throws Exception {
         try {
             oMysql.conexion(enumTipoConexion);
             oProfesorBean.setId_usuario(Integer.parseInt(oMysql.getOne("profesor", "id_usuario", oProfesorBean.getId())));
@@ -88,11 +92,15 @@ public class ProfesorDao {
             if (oProfesorBean.getId() == 0) {
                 oProfesorBean.setId(oMysql.insertOne("profesor"));
             }
-            
+            oMysql.updateOne(oProfesorBean.getId(), "profesor", "id_usuario", Integer.toString(oProfesorBean.getId_usuario()));
             oMysql.updateOne(oProfesorBean.getId(), "profesor", "nombre", oProfesorBean.getNombre());
             oMysql.updateOne(oProfesorBean.getId(), "profesor", "ape1", oProfesorBean.getApe1());
             oMysql.updateOne(oProfesorBean.getId(), "profesor", "ape2", oProfesorBean.getApe2());
+            oMysql.updateOne(oProfesorBean.getId(), "profesor", "sexo", oProfesorBean.getSexo());
+            oMysql.updateOne(oProfesorBean.getId(), "profesor", "telefono", oProfesorBean.getTelefono());
             oMysql.updateOne(oProfesorBean.getId(), "profesor", "email", oProfesorBean.getEmail());
+            oMysql.updateOne(oProfesorBean.getId(), "profesor", "dni", oProfesorBean.getDni());
+
             oMysql.commitTrans();
         } catch (Exception e) {
             oMysql.rollbackTrans();
@@ -113,5 +121,5 @@ public class ProfesorDao {
             oMysql.desconexion();
         }
     }
-    
+
 }
