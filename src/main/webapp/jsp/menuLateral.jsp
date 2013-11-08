@@ -28,13 +28,24 @@
         menu += "<a href=\"Controller?class=usuario&method=logout\">Logout</a></li>";
     }
     menu += "<li class=\"nav-header\">Profesor</li>";
+
     if (oContexto.getClase().equals("profesor") && oContexto.getMetodo().equals("list")) {
         menu += "<li class=\"active\">";
     } else {
         menu += "<li>";
     }
     menu += "<a href=\"Controller?class=profesor&method=list\">Listar</a></li>";
+    
+        
+      if (oContexto.getClase().equals("profesor") && oContexto.getMetodo().equals("new")) {
+        menu += "<li class=\"active\">";
+    } else {
+        menu += "<li>";
+    }
+    menu += "<a href=\"Controller?class=profesor&method=new\">Crear</a></li>";
+    
 
     menu += "</ul></div>";
+    
 %>
 <%=menu%>
