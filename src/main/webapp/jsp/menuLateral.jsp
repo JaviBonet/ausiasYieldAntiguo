@@ -26,6 +26,19 @@
             menu += "<li>";
         }
         menu += "<a href=\"Controller?class=usuario&method=logout\">Logout</a></li>";
+        menu += "<li class=\"nav-header\">Entrada</li>";
+        if (oContexto.getClase().equals("entrada") && oContexto.getMetodo().equals("list")) {
+            menu += "<li class=\"active\">";
+        } else {
+            menu += "<li>";
+        }
+        menu += "<a href=\"Controller?class=entrada&method=list\">Listar</a></li>";
+        if (oContexto.getClase().equals("entrada") && oContexto.getMetodo().equals("new")) {
+            menu += "<li class=\"active\">";
+        } else {
+            menu += "<li>";
+        }
+        menu += "<a href=\"Controller?class=entrada&method=new\">Crear</a></li>";
     }
     menu += "</ul></div>";
 %>
