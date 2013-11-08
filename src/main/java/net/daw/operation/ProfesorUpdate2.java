@@ -18,29 +18,24 @@ import net.daw.parameter.ProfesorParam;
  *
  * @author al037184
  */
-public class ProfesorUpdate1 implements Operation {
-      @Override
+public class ProfesorUpdate2 implements Operation{
+     @Override
     public Object execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         Contexto oContexto = (Contexto) request.getAttribute("contexto");
-        oContexto.setVista("jsp/profesor/form.jsp");
-        ProfesorBean oProfesorBean;
-        ProfesorDao oProfesorDao;
-        oProfesorBean = new ProfesorBean();
+        oContexto.setVista("jsp/mensaje.jsp");   
+        ProfesorBean oProfesorBean = new ProfesorBean();
+        ProfesorDao oProfesorDao = new ProfesorDao(oContexto.getEnumTipoConexion());
         ProfesorParam oProfesorParam = new ProfesorParam(request);
         oProfesorBean = oProfesorParam.loadId(oProfesorBean);
-        oProfesorDao = new ProfesorDao(oContexto.getEnumTipoConexion());
-        try {
-            oProfesorBean = oProfesorDao.get(oProfesorBean);
-        } catch (Exception e) {
-            throw new ServletException("AlumnoController: Update Error: Phase 1: " + e.getMessage());
-        }
         try {
             oProfesorBean = oProfesorParam.load(oProfesorBean);
         } catch (NumberFormatException e) {
-            oContexto.setVista("jsp/mensaje.jsp");
             return "Tipo de dato incorrecto en uno de los campos del formulario";
+        }         
+        try {
+            oProfesorDao.set(oProfesorBean);
+        } catch (Exception e) {
+            throw new ServletException("AlumnoController: Update Error: Phase 2: " + e.getMessage());
         }
-        return oProfesorBean;
-    }
-    
-}
+        return "Se ha modificado la información del profesor con id=" + Integer.toString(oProfesorBean.getId());
+}}
