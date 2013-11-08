@@ -21,7 +21,7 @@ public class EntradaNew2 implements Operation {
         try {
             oEntradaBean = oEntradaParam.load(oEntradaBean);
         } catch (NumberFormatException e) {
-            return "Tipo de dato incorrecto en uno de los campos del formulario";
+            return "Tipo de dato incorrecto en uno de los campos del formulario"+e.getMessage();
         }
         try {
             oEntradaDao.set(oEntradaBean);

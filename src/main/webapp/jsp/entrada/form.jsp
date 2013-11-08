@@ -43,7 +43,7 @@
         <div class="control-group">
             <label class="control-label" for="idusuario">Id_usuario </label>
             <div class="controls">
-                <input <%=strControlEnabled%>  id="idusuario" name="idusuario"
+                <input <%=strControlEnabled%>  id="idusuario" name="id_usuario"
                                                type="text" size="30" maxlength="50" autofocus="autofocus"
                                                value="<%=id_Usuario%>" />
             </div>
@@ -51,7 +51,7 @@
         <div class="control-group">
             <label class="control-label" for="idhilo">Id_Hilo </label>
             <div class="controls">
-                <input <%=strControlEnabled%>  id="idhilo" name="idhilo"
+                <input <%=strControlEnabled%>  id="idhilo" name="id_hilo"
                                                type="text" size="30" maxlength="50" autofocus="autofocus"
                                                value="<%=id_Hilo%>" />
             </div>

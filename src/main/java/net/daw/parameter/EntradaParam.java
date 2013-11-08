@@ -33,6 +33,12 @@ public class EntradaParam {
 
     public EntradaBean load(EntradaBean oEntrada) throws NumberFormatException, ParseException {
         try {
+            if ((request.getParameter("id_usuario") != null)) {
+                oEntrada.setId_usuario(Integer.parseInt(request.getParameter("id_usuario")));
+            }
+            if ((request.getParameter("id_hilo") != null)) {
+                oEntrada.setId_hilo(Integer.parseInt(request.getParameter("id_hilo")));
+            }
             if ((request.getParameter("titulo") != null)) {
                 oEntrada.setTitulo(request.getParameter("titulo"));
             }
