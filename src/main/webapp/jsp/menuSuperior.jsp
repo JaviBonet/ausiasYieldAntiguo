@@ -14,6 +14,5 @@
         <ul class="dropdown-menu">
             <li><a href="Controller?class=entrada&method=new">Entrada</a></li>
             <li><a href="Controller?class=profesor&method=new">Profesor</a></li>
-        </ul>
-    </li>
+       </ul> 
 </ul>
