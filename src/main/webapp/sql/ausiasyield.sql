@@ -1,4 +1,3 @@
-
 -- Base de datos incompleta para el proyecto
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -600,16 +599,43 @@ CREATE TABLE IF NOT EXISTS `profesor` (
 --
 
 INSERT INTO `profesor` (`id`, `id_usuario`, `nombre`, `ape1`, `ape2`, `sexo`, `telefono`, `email`, `dni`) VALUES
-(1, 11, 'rafael', 'aznar', 'aparici', 'hombre', '600000001', 'raznar@gmail.com', '9876543'),
-(2, 12, 'juan', 'martinez', 'martinez', 'hombre', '600000002', 'juanmartinez@gmail.com', '1234567'),
-(3, 13, 'elena', 'calle', 'soriano', 'mujer', '600000003', 'elenacalle@gmail.com', '8763915'),
-(4, 14, 'luis', 'companys', 'garcia', 'hombre', '60000005', 'luiscompanys@gmail.com', '87625671'),
-(5, 15, 'alba', 'benito', 'albert', 'mujer', '650567732', 'albabenito@gmail.com', '42697213'),
-(6, 16, 'amparo', 'albert', 'laplaza', 'mujer', '606277789', 'albertlaplaza@gmail.com', '74568290'),
-(7, 17, 'ambrosio', 'galindez', 'garcia', 'hombre', '633214596', 'ambrosiogdez@gmail.com', '291755364'),
-(8, 18, 'luisa', 'martinez', 'benito', 'mujer', '687123456', 'luisamartinez@gmail.com', '321456987'),
-(9, 19, 'leon', 'trotsky', 'perez', 'hombre', '625879321', 'leontrotsky@gmail.com', '4789651'),
-(10, 20, 'rosa', 'luxemburgo', 'delicado', 'mujer', '625132147', 'rosaluxe@gmail.com', '321456987');
+(1, 11, 'Rafael', 'Aznar', 'Aparici', 'Hombre', '600000001', 'raznar@gmail.com', '9876543'),
+(2, 12, 'Juan', 'Martinez', 'Martinez', 'Hombre', '600000002', 'juanmartinez@gmail.com', '1234567'),
+(3, 13, 'Elena', 'Calle', 'Soriano', 'Mujer', '600000003', 'elenacalle@gmail.com', '8763915'),
+(4, 14, 'Luis', 'Companys', 'Garcia', 'Hombre', '60000005', 'luiscompanys@gmail.com', '87625671'),
+(5, 15, 'Alba', 'Benito', 'Albert', 'Mujer', '650567732', 'albabenito@gmail.com', '42697213'),
+(6, 16, 'Amparo', 'Albert', 'Laplaza', 'Mujer', '606277789', 'albertlaplaza@gmail.com', '74568290'),
+(7, 17, 'Ambrosio', 'Galindez', 'Garcia', 'Hombre', '633214596', 'ambrosiogdez@gmail.com', '291755364'),
+(8, 18, 'Luisa', 'Martinez', 'Benito', 'Mujer', '687123456', 'luisamartinez@gmail.com', '321456987'),
+(9, 19, 'Leon', 'Trotsky', 'Perez', 'Hombre', '625879321', 'leontrotsky@gmail.com', '4789651'),
+(10, 20, 'Rosa', 'Luxemburgo', 'Delicado', 'Mujer', '625132147', 'rosaluxe@gmail.com', '321456987');
+
+-- 
+-- Añadir tabla cuestionario
+-- by Salva Tamarit
+--
+
+CREATE TABLE IF NOT EXISTS `cuestionario` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  `evaluacion` int(6) DEFAULT NULL,
+  `activo` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+INSERT INTO `cuestionario` (`id`, `descripcion`, `fecha`, `evaluacion`, `activo`) VALUES
+(1,'Descripcion uno','2013-11-01',1,0),
+(2,'Descripcion dos','2013-11-01',1,0),
+(3,'Descripcion tres','2013-11-01',1,0),
+(4,'Descripcion cuatro','2013-11-01',1,0),
+(5,'Descripcion cinco','2013-11-01',1,0),
+(6,'Descripcion seis','2013-11-01',1,0),
+(7,'Descripcion siete','2013-11-01',1,0),
+(8,'Descripcion ocho','2013-11-01',1,0),
+(9,'Descripcion nueve','2013-11-01',1,0),
+(10,'Descripcion diez','2013-11-01',1,0);
+
 
 --
 -- Base de datos: `ausiasyield`
@@ -646,5 +672,3 @@ INSERT INTO `entrada` (`id`, `titulo`, `contenido`, `id_usuario`, `id_hilo`, `fe
 (8, 'Depuración código', 'Depurar código y hacer pruebas', 8, 8, '2013-09-23'),
 (9, 'Listado Usuarios no está disponible', 'Arreglar', 9, 9, '2013-10-09'),
 (10, 'Realizar mantenimiento clases DAO', 'Probar y optimizar', 10, 10, '2013-11-20');
-
-
