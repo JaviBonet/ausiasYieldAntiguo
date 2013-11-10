@@ -86,7 +86,15 @@
         <div class="control-group">
             <label class="control-label" for="sexo">Sexo: </label> 
             <div class="controls">
-                <input <%=strControlEnabled%> id="sexo" name="sexo" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=sexo%>" /><br />
+
+                <select <%=strControlEnabled%> id="sexo" name="sexo" value="<%=sexo%>">
+                    <option>Hombre</option>
+                    <option>Mujer</option>
+                </select>
+                <!--
+                 
+                 <input <%=strControlEnabled%> id="sexo" name="sexo" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=sexo%>" /><br />
+                -->
             </div>
         </div>
         <div class="control-group">
