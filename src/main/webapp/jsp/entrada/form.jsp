@@ -77,7 +77,7 @@
             <div class="controls">
                 <input <%=strControlEnabled%>  id="fecha"
                                                name="fecha" type="text" size="30" maxlength="50"
-                                               value="<%=fecha%>" placeholder="Año-Mes-Día"/> 
+                                               value="<%=fecha%>" placeholder="Año/Mes/Día"/> 
             </div>
         </div>           
         <div class="control-group">
