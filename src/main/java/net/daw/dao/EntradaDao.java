@@ -41,17 +41,17 @@ public class EntradaDao {
 
     public ArrayList<EntradaBean> getPage(int intRegsPerPag, int intPage, HashMap<String, String> hmFilter, HashMap<String, String> hmOrder) throws Exception {
         ArrayList<Integer> arrId;
-        ArrayList<EntradaBean> arrCliente = new ArrayList<>();
+        ArrayList<EntradaBean> arrEntrada = new ArrayList<>();
         try {
             oMysql.conexion(enumTipoConexion);
             arrId = oMysql.getPage("entrada", intRegsPerPag, intPage, hmFilter, hmOrder);
             Iterator<Integer> iterador = arrId.listIterator();
             while (iterador.hasNext()) {
                 EntradaBean oEntradaBean = new EntradaBean(iterador.next());
-                arrCliente.add(this.get(oEntradaBean));
+                arrEntrada.add(this.get(oEntradaBean));
             }
             oMysql.desconexion();
-            return arrCliente;
+            return arrEntrada;
         } catch (Exception e) {
             throw new Exception("EntradaDao.getPage: Error: " + e.getMessage());
         }
