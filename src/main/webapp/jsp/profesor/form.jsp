@@ -88,8 +88,9 @@
             <div class="controls">
 
                 <select <%=strControlEnabled%> id="sexo" name="sexo" value="<%=sexo%>">
-                    <option>Hombre</option>
-                    <option>Mujer</option>
+                    <option selected=""></option>
+                    <option <%if (sexo.equals("Hombre")) {out.print("selected");}%>>Hombre</option>
+                    <option <%if (sexo.equals("Mujer")) {out.print("selected");}%>>Mujer</option>
                 </select>
                 <!--
                  
