@@ -19,6 +19,16 @@ public class ActividadOfflineBean {
      private int  evaluacion =0;
      private boolean activo = true;
 
+    public ActividadOfflineBean() {
+       
+    }
+
+    
+     public ActividadOfflineBean(int id) {
+         this.id = id;
+     }
+    
+    
     /**
      * @return the id
      */

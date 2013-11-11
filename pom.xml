@@ -19,13 +19,14 @@
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>6.0</version>
-            <scope>provided</scope>
+                <type>jar</type>
         </dependency>
                 <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.26</version>
-        </dependency>
+                        <type>jar</type>
+                </dependency>
     </dependencies>
 
     <build>
