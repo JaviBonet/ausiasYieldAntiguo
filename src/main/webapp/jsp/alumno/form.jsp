@@ -96,6 +96,7 @@
             </div>
         </div>
         <div class="control-group">
+<<<<<<< HEAD
             <label class="control-label" for="sexo">Sexo: </label> 
             <div class="controls">
                 <input <%=strControlEnabled%> id="sexo" name="sexo" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=sexo%>" /><br />
@@ -141,6 +142,58 @@
             <label class="control-label" for="validado">Validado: </label> 
             <div class="controls">
                 <input <%=strControlEnabled%> id="validado" name="validado" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=validado%>" /><br />
+=======
+            <label class="control-label" for="sexo">Sexo: </label>
+            <div class="controls">
+                <select <%=strControlEnabled%> id="sexo" name="sexo" type="text" autofocus="autofocus" value="<%=sexo%>" >
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                </select>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="domicilio">Domicilio: </label> 
+            <div class="controls">
+                <input <%=strControlEnabled%> id="domicilio" name="domicilio" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=domicilio%>" /><br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="codpostal">C. Postal: </label> 
+            <div class="controls">
+                <input <%=strControlEnabled%> id="codpostal" name="codpostal" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=codpostal%>" /><br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="poblacion">Población: </label> 
+            <div class="controls">
+                <input <%=strControlEnabled%> id="poblacion" name="poblacion" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=poblacion%>" /><br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="provincia">Provincia: </label> 
+            <div class="controls">
+                <input <%=strControlEnabled%> id="provincia" name="provincia" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=provincia%>" /><br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="telefono">Teléfono: </label> 
+            <div class="controls">
+                <input <%=strControlEnabled%> id="telefono" name="telefono" type="text" size="30" maxlength="50" autofocus="autofocus" value="<%=telefono%>" /><br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="email">Email: </label> 
+            <div class="controls">
+                <input <%=strControlEnabled%> id="email" name="email" type="text" size="30" maxlength="50" value="<%=email%>" /><br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="validado">Validado: </label>
+            <div class="controls">
+                <select <%=strControlEnabled%> id="validado" name="validado" type="text" autofocus="autofocus" value="<%=validado%>" >
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
             </div>
         </div>
         <div class="control-group">
